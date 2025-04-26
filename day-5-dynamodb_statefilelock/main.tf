@@ -18,8 +18,8 @@ resource "aws_instance" "name" {
 #   ignore_changes = [ instance_type ]
 # }
 
-lifecycle {
-  create_before_destroy = true
-}
+# lifecycle {
+#   create_before_destroy = true
+# }
 
 }
