@@ -7,6 +7,6 @@ resource "aws_instance" "private" {
   instance_type = "t2.micro"
   
   tags = {
-    Name = "myec2jenkins-new-2"
+    Name = "myec2jenkins-changed"
   }
 }
