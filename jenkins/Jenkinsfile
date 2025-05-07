@@ -2,24 +2,27 @@ pipeline {
     agent any
 
     stages {
-        // stage('clone') {
-        //     steps {
-        //       // git branch: 'main', url: 'https://github.com/CloudTechDevOps/Terraform_CICD.git'
-        //     }
-        // }
-        stage('init stage') {
+        stage('Init Stage') {
             steps {
-                sh 'terraform init'
+                dir('jenkins') {
+                    sh 'terraform init'
+                }
             }
         }
-         stage('plan stage') {
+
+        stage('Plan Stage') {
             steps {
-                sh 'terraform plan'
+                dir('jenkins') {
+                    sh 'terraform plan'
+                }
             }
         }
-         stage('apply stage') {
+
+        stage('Apply Stage') {
             steps {
-                sh 'terraform apply -auto-approve'
+                dir('jenkins') {
+                    sh 'terraform apply -auto-approve'
+                }
             }
         }
     }
